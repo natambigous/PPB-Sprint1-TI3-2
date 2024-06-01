@@ -28,69 +28,134 @@ class SignUp extends StatelessWidget {
               );
             }
           },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Color(0xFFF2FFF5),
-            ),
+          child: SingleChildScrollView( // Added SingleChildScrollView
             child: Container(
-              padding: EdgeInsets.fromLTRB(20, 158, 20, 143),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Positioned(
-                    left: -20,
-                    right: -20,
-                    top: -158,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xFF4F7942),
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(32),
-                          bottomLeft: Radius.circular(32),
+              decoration: BoxDecoration(
+                color: Color(0xFFF2FFF5),
+              ),
+              child: Container(
+                padding: EdgeInsets.fromLTRB(20, 158, 20, 143),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      left: -20,
+                      right: -20,
+                      top: -158,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xFF4F7942),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(32),
+                            bottomLeft: Radius.circular(32),
+                          ),
+                        ),
+                        child: Container(
+                          width: 360,
+                          height: 278,
                         ),
                       ),
-                      child: Container(
-                        width: 360,
-                        height: 278,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFFFFFF),
+                        borderRadius: BorderRadius.circular(32),
                       ),
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFFFFFF),
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(18, 25, 18, 40),
-                        child: Form(
-                          key: _formKey,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 29),
-                                child: Text(
-                                  'Sign Up',
-                                  style: GoogleFonts.getFont(
-                                    'Poppins',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 32,
-                                    color: Color(0xFF363636),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Container(
+                          padding: EdgeInsets.fromLTRB(18, 25, 18, 40),
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 29),
+                                  child: Text(
+                                    'Sign Up',
+                                    style: GoogleFonts.getFont(
+                                      'Poppins',
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 32,
+                                      color: Color(0xFF363636),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 29),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                      child: Column(
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 29),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                              child: Align(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                  'Name',
+                                                  style: GoogleFonts.getFont(
+                                                    'Poppins',
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16,
+                                                    color: Color(0xFF363636),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            TextFormField(
+                                              controller: _nameController,
+                                              validator: (value) {
+                                                if (value == null || value.isEmpty) {
+                                                  return 'Please enter your name';
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                              child: Align(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                  'Email',
+                                                  style: GoogleFonts.getFont(
+                                                    'Poppins',
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 16,
+                                                    color: Color(0xFF363636),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            TextFormField(
+                                              controller: _emailController,
+                                              validator: (value) {
+                                                if (value == null || value.isEmpty) {
+                                                  return 'Please enter your email';
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Column(
                                         mainAxisAlignment: MainAxisAlignment.start,
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
@@ -99,7 +164,7 @@ class SignUp extends StatelessWidget {
                                             child: Align(
                                               alignment: Alignment.topLeft,
                                               child: Text(
-                                                'Name',
+                                                'Password',
                                                 style: GoogleFonts.getFont(
                                                   'Poppins',
                                                   fontWeight: FontWeight.w400,
@@ -110,119 +175,56 @@ class SignUp extends StatelessWidget {
                                             ),
                                           ),
                                           TextFormField(
-                                            controller: _nameController,
+                                            controller: _passwordController,
+                                            obscureText: true,
                                             validator: (value) {
                                               if (value == null || value.isEmpty) {
-                                                return 'Please enter your name';
+                                                return 'Please enter your password';
                                               }
                                               return null;
                                             },
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                            child: Align(
-                                              alignment: Alignment.topLeft,
-                                              child: Text(
-                                                'Email',
-                                                style: GoogleFonts.getFont(
-                                                  'Poppins',
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 16,
-                                                  color: Color(0xFF363636),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          TextFormField(
-                                            controller: _emailController,
-                                            validator: (value) {
-                                              if (value == null || value.isEmpty) {
-                                                return 'Please enter your email';
-                                              }
-                                              return null;
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                          child: Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Text(
-                                              'Password',
-                                              style: GoogleFonts.getFont(
-                                                'Poppins',
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 16,
-                                                color: Color(0xFF363636),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        TextFormField(
-                                          controller: _passwordController,
-                                          obscureText: true,
-                                          validator: (value) {
-                                            if (value == null || value.isEmpty) {
-                                              return 'Please enter your password';
-                                            }
-                                            return null;
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  if (_formKey.currentState!.validate()) {
-                                    context.read<RegisterCubit>().register(
-                                      email: _emailController.text,
-                                      password: _passwordController.text,
-                                    );
-                                  }
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF4F7942),
-                                    borderRadius: BorderRadius.circular(16),
+                                    ],
                                   ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      context.read<RegisterCubit>().register(
+                                        email: _emailController.text,
+                                        password: _passwordController.text,
+                                      );
+                                    }
+                                  },
                                   child: Container(
-                                    padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
-                                    child: Text(
-                                      'Sign Up',
-                                      style: GoogleFonts.getFont(
-                                        'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16,
-                                        color: Color(0xFFFFFFFF),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF4F7942),
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                                      child: Text(
+                                        'Sign Up',
+                                        style: GoogleFonts.getFont(
+                                          'Poppins',
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                          color: Color(0xFFFFFFFF),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -231,4 +233,3 @@ class SignUp extends StatelessWidget {
     );
   }
 }
-
