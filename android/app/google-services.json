@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "728078343038",
+    "project_id": "ecosmart-ppb-ti3-2",
+    "storage_bucket": "ecosmart-ppb-ti3-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728078343038:android:adfc83e46178699094b12f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqNGNwQ6zgAWAmlKT-EZe1HUMkvjNgDoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
