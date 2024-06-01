@@ -28,7 +28,7 @@ class SignUp extends StatelessWidget {
               );
             }
           },
-          child: SingleChildScrollView( // Added SingleChildScrollView
+          child: SingleChildScrollView(  // Tambahkan SingleChildScrollView di sini
             child: Container(
               decoration: BoxDecoration(
                 color: Color(0xFFF2FFF5),
