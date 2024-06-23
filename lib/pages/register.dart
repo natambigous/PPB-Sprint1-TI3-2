@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tubes_ppb/bloc/register/register_cubit.dart';
-import 'package:tubes_ppb/utils/routes.dart'; 
+import 'package:tubes_ppb/utils/routes.dart';
 
 class SignUp extends StatelessWidget {
   final _nameController = TextEditingController();
@@ -28,13 +28,14 @@ class SignUp extends StatelessWidget {
               );
             }
           },
-          child: SingleChildScrollView(  // Tambahkan SingleChildScrollView di sini
+          child: SingleChildScrollView(
             child: Container(
+              height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 color: Color(0xFFF2FFF5),
               ),
-              child: Container(
-                padding: EdgeInsets.fromLTRB(20, 158, 20, 143),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(20, 158, 20, MediaQuery.of(context).viewInsets.bottom + 143),
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [

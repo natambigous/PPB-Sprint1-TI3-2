@@ -31,7 +31,7 @@ class _UploadImagePageState extends State<UploadImagePage> {
     if (_image == null) return;
 
     String fileName = basename(_image!.path);
-    Reference storageRef = storage.ref().child('uploads/$fileName'); // Use child() instead of refFromURL()
+    Reference storageRef = storage.ref().child('uploads/$fileName');
 
     try {
       await storageRef.putFile(_image!);
@@ -72,10 +72,10 @@ class _UploadImagePageState extends State<UploadImagePage> {
           children: <Widget>[
             _image == null
                 ? Text('No image selected.')
-                : Image.file(_image!), // Display the selected image (only works on mobile platforms)
+                : Image.file(_image!),
             SizedBox(height: 20),
             _uploadedFileURL != null
-                ? Image.network(_uploadedFileURL!) // Display uploaded image using its URL
+                ? Image.network(_uploadedFileURL!)
                 : Container(),
             SizedBox(height: 20),
             Row(

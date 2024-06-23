@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tubes_ppb/bloc/login/login_cubit.dart';
-import 'package:tubes_ppb/utils/routes.dart'; 
+import 'package:tubes_ppb/utils/routes.dart';
 
 class SignIn extends StatelessWidget {
   final _emailController = TextEditingController();
@@ -24,36 +24,36 @@ class SignIn extends StatelessWidget {
               );
             }
           },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Color(0xFFF2FFF5),
-            ),
+          child: SingleChildScrollView(
             child: Container(
-              padding: EdgeInsets.fromLTRB(20, 182, 20, 38),
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Positioned(
-                    left: -20,
-                    right: -20,
-                    top: -182,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xFF4F7942),
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(32),
-                          bottomLeft: Radius.circular(32),
+              height: MediaQuery.of(context).size.height,
+              decoration: BoxDecoration(
+                color: Color(0xFFF2FFF5),
+              ),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(20, 182, 20, MediaQuery.of(context).viewInsets.bottom + 38),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      left: -20,
+                      right: -20,
+                      top: -182,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xFF4F7942),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(32),
+                            bottomLeft: Radius.circular(32),
+                          ),
+                        ),
+                        child: Container(
+                          width: 360,
+                          height: 278,
                         ),
                       ),
-                      child: Container(
-                        width: 360,
-                        height: 278,
-                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Column(
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -228,8 +228,8 @@ class SignIn extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
