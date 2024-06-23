@@ -90,12 +90,12 @@ class _UploadImagePageState extends State<UploadImagePage> {
                   onPressed: _image != null ? uploadImage : null,
                   child: Text('Upload Image'),
                 ),
-                SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _uploadedFileURL != null ? deleteImage : null,
-                  child: Text('Delete Image'),
-                ),
               ],
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: _uploadedFileURL != null ? deleteImage : null,
+              child: Text('Delete Image'),
             ),
           ],
         ),
