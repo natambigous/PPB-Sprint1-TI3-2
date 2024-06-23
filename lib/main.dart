@@ -13,6 +13,7 @@ import 'package:tubes_ppb/pages/profile.dart';
 import 'package:tubes_ppb/pages/result.dart';
 import 'package:tubes_ppb/pages/login.dart';
 import 'package:tubes_ppb/pages/register.dart';
+import 'package:tubes_ppb/pages/uploadimagepage.dart';
 import 'package:tubes_ppb/utils/routes.dart';
 import 'bloc/register/register_cubit.dart';
 import 'package:tubes_ppb/bloc/login/login_cubit.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
             }
           },
         ),
-      ),
-    );
-  }
+        ),
+      );
+    }
 }

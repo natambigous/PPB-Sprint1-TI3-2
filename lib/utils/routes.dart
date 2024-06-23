@@ -7,6 +7,7 @@ import 'package:tubes_ppb/pages/login.dart';
 import 'package:tubes_ppb/pages/profile.dart';
 import 'package:tubes_ppb/pages/register.dart';
 import 'package:tubes_ppb/pages/result.dart';
+import 'package:tubes_ppb/pages/uploadimagepage.dart'; // Tambahkan ini
 
 MaterialPageRoute _pageRoute({required Widget body, required RouteSettings settings}) =>
     MaterialPageRoute(builder: (_) => body, settings: settings);
@@ -36,10 +37,13 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
       break;
     case rAbout:
       _route = _pageRoute(body: About(), settings: settings);
-      break;  
+      break;
     case rResult:
       _route = _pageRoute(body: Result(), settings: settings);
-      break; 
+      break;
+    case rUploadImage: // Tambahkan ini
+      _route = _pageRoute(body: UploadImagePage(), settings: settings);
+      break;  
   }
 
   return _route;
@@ -55,5 +59,4 @@ const String rProfile = '/profile';
 const String rCamera = '/camera';
 const String rAbout = '/about';
 const String rResult = '/result';
-
-
+const String rUploadImage = '/upload_image'; // Tambahkan ini
